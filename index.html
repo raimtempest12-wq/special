@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Chelly ❤️</title>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a0a0a;
+            --secondary: #1a1a1a;
+            --tertiary: #2d2d2d;
+            --accent: #ff6b8a;
+            --accent-hover: #ff4d73;
+            --text: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-muted: #808080;
+            --glass: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Enhanced Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(45deg, #0a0a0a, #1a1a1a, #0f0f0f, #1f1f1f);
+            background-size: 400% 400%;
+            animation: gradientFlow 20s ease infinite;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 107, 138, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(102, 126, 234, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(240, 147, 251, 0.05) 0%, transparent 50%);
+            animation: floatBg 25s ease-in-out infinite;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 107, 138, 0.3);
+            font-size: 1.5rem;
+            animation: floatHeart 15s linear infinite;
+        }
+
+        @keyframes gradientFlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes floatBg {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(-10px) rotate(-1deg); }
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Enhanced Login Page */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-box {
+            background: var(--glass);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            padding: 80px 50px;
+            border-radius: 32px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            animation: slideUpFade 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient-2);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(80px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .login-box h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .login-box .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .password-hint {
+            background: rgba(255, 107, 138, 0.12);
+            border: 1px solid rgba(255, 107, 138, 0.25);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .password-hint::before {
+            content: '💡';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--primary);
+            padding: 5px;
+            font-size: 1.2rem;
+        }
+
+        .password-hint strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 18px 24px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            color: var(--text);
+            font-size: 1rem;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 107, 138, 0.2);
+        }
+
+        .form-group input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--gradient-2);
+            color: white;
+            border: none;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .login-btn:hover::before {
+            left: 100%;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 107, 138, 0.4);
+        }
+
+        /* Enhanced Main Content */
+        .main-content {
+            display: none;
+            min-height: 100vh;
+        }
+
+        .slide {
+            display: none;
+            min-height: 100vh;
+            padding: 100px 20px;
+            position: relative;
+            opacity: 0;
+        }
+
+        .slide.active {
+            display: flex !important;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            animation: slideIn 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(50px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        .slide-content {
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .slide h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+
+        .slide p {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            font-weight: 300;
+            line-height: 1.8;
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .slide p:nth-child(2) { animation-delay: 0.2s; }
+        .slide p:nth-child(3) { animation-delay: 0.4s; }
+        .slide p:nth-child(4) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+            position: relative;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-2);
+            animation: underlineGrow 1s ease forwards;
+            transform: scaleX(0);
+        }
+
+        @keyframes underlineGrow {
+            to { transform: scaleX(1); }
+        }
+
+        .funny-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 15px;
+            opacity: 0.7;
+        }
+
+        /* Enhanced Photo Section */
+        .photo-section {
+            margin: 80px 0;
+            position: relative;
+        }
+
+        .photo-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+      .photo-container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: none;
+    background-color: #111; /* fallback background */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* efek ngambang awal */
+    transition: all 0.4s ease;
+    transform: translateY(0); /* posisi awal */
+    cursor: pointer;
+}
+
+
+.photo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #000; /* atau var(--bg) / warna gradasi */
+    border-radius: 15px;
+}
+
+
+
+
+        .photo-container:hover {
+    transform: translateY(-10px) scale(1.05); /* terangkat dan membesar */
+    box-shadow: 0 0 15px rgba(255, 0, 200, 0.4), 0 20px 40px rgba(255, 0, 200, 0.3);
+
+    z-index: 2; /* biar di atas elemen lain */
+}
+
+        .photo-container:nth-child(2):hover {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .photo-label {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Enhanced Decision Box */
+        .decision-container {
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .decision-box {
+            background: var(--glass);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            padding: 80px 50px;
+            border-radius: 32px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .decision-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-2);
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        .decision-box h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .decision-box p {
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .decision-btn {
+            padding: 18px 40px;
+            border: none;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            min-width: 140px;
+        }
+
+        .yes-btn {
+            background: var(--gradient-2);
+            color: white;
+        }
+
+        .yes-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .yes-btn:hover::before {
+            left: 100%;
+        }
+
+        .yes-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 107, 138, 0.4);
+        }
+
+        .no-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .no-btn:hover {
+            animation: rejected 0.5s ease-in-out;
+            cursor: not-allowed;
+        }
+
+        @keyframes rejected {
+            0% { transform: translateX(0) rotate(0deg); }
+            25% { transform: translateX(-10px) rotate(-5deg); }
+            75% { transform: translateX(10px) rotate(5deg); }
+            100% { transform: translateX(0) rotate(0deg); }
+        }
+
+        .block-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 71, 87, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            border-radius: 16px;
+            font-size: 1rem;
+            animation: blockPulse 0.3s ease-in-out;
+        }
+
+        @keyframes blockPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Enhanced Video Section */
+        .video-container {
+            margin-top: 50px;
+            animation: slideUpFade 1s ease forwards;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            background: var(--gradient-3);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        /* Enhanced Navigation */
+        .nav-container {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            width: 60px;
+            height: 60px;
+            background: var(--glass);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 15px 30px rgba(255, 107, 138, 0.3);
+        }
+
+        /* Enhanced Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--gradient-2);
+            transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            z-index: 1001;
+            box-shadow: 0 0 10px rgba(255, 107, 138, 0.5);
+        }
+
+        /* Enhanced Music Control */
+        .music-control {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+            width: 56px;
+            height: 56px;
+            background: var(--glass);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 1000;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .music-control:hover {
+            background: var(--accent);
+            transform: translateY(-2px) scale(1.1);
+            box-shadow: 0 15px 30px rgba(255, 107, 138, 0.3);
+        }
+
+        .music-control.playing {
+            animation: musicPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes musicPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Responsive Enhancements */
+        @media (max-width: 768px) {
+            .login-box {
+                padding: 60px 30px;
+                margin: 20px;
+            }
+            
+            .slide {
+                padding: 80px 20px;
+            }
+            
+            .decision-box {
+                padding: 60px 30px;
+                margin: 20px;
+            }
+            
+            .button-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-container {
+                bottom: 30px;
+                right: 30px;
+            }
+            
+            .music-control {
+                top: 30px;
+                right: 30px;
+                width: 48px;
+                height: 48px;
+            }
+
+            .photo-gallery {
+                gap: 20px;
+            }
+
+            .photo-container {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-box h1 {
+                font-size: 2.5rem;
+            }
+
+            .decision-box h2 {
+                font-size: 2.8rem;
+            }
+
+            .photo-container {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 107, 138, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--accent);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Music Control -->
+    <button class="music-control" onclick="toggleMusic()" id="musicBtn" title="Toggle Music">♪</button>
+
+    <!-- Audio -->
+<audio id="bgMusic" loop preload="auto">
+    <source src="audiochelly.mp3" type="audio/mpeg">
+</audio>
+
+   
+
+    <!-- Main Content -->
+   <!-- Hapus bagian login dan langsung tampilkan konten utama -->
+<div class="main-content" id="mainContent" style="display: block;">
+    <!-- Slide 1 -->
+    <div class="slide active">
+        <div class="slide-content">
+            <h1>Hai Chelly</h1>
+            <p>Aku tau aku udah buat kesalahan besar.</p>
+            <p>web ini adalah bukti kalau aku masih akan tetap ada rasa dengan mu sampai kapan pun itu.</p>
+            <p class="highlight">Dan aku mau menyelesaikan ini semua lewat web sederhana ini hehe.</p>
+            <p class="funny-text">(Jangan di-skip ya, udah capek bikinnya 😅)</p>
+        </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h1>Maafin Aku Ya</h1>
+            <p>Aku nyakitin kamu berkali-kali bahkan aku tetap gangguin kamu meskipun tau ini bikin kamu risih.</p>
+            <p>Aku bikin kamu gak nyaman dengan ku dengan semua janji manis ku.</p>
+            <p class="highlight">Inu salah aku, aku selalu ingin bilang ini secara langsung, tapi tetap aja natap matamu aja bikin aku ngingat kesalahanku..</p>
+            <p class="funny-text">(Ego aku emang kadang lebih gede dari otak aku 🙃)</p>
+        </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h1>This For You</h1>
+            <div class="photo-section">
+                <div class="photo-gallery">
+                    <div class="photo-container">
+                        <div class="photo-placeholder">
+                            <img src="chelly1.jpg" alt="Foto Chelly 1" class="photo-image">
+                        </div>
+                    </div>
+                    <div class="photo-container">
+                        <div class="photo-placeholder">
+                         
+                            <img src="chelly2.jpg" alt="Foto Chelly 2" class="photo-image">
+                        </div>
+                    </div>
+                    <div class="photo-container">
+                        <div class="photo-placeholder">
+                            
+                            <img src="chelly3.jpg" alt="Foto Chelly 3" class="photo-image">
+                        </div>
+                    </div>
+                </div>
+                <p class="photo-label">Aku bahkan masih nyimpan 3 foto favorit ku dulu hahaha ❤️</p>
+            </div>
+            <p>Kamu bukan cuma "orang biasa" buat aku.</p>
+            <p class="highlight">Kamu adalah segalanya yang aku ga tau kalau peran mu dihidup ku sangat penting dihidupku.</p>
+            <p class="funny-text">(Plus kamu adalah orang yang sama jokes kayak aku 😂)</p>
+        </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h1>Kamu berharga</h1>
+            <p>Kamu pastinya udah muak dengar semua maafku dan janjiku, maka dari itu gak mau janji lagi.</p>
+            <p>Tapi aku bakal yakinin kamu dan berkomitmen gak bakal mengulangi kesalahan yang sama kek dulu.</p>
+            <p>Kamu berhak bahagia dengan orang lain itu pilihan kamu (kalau sama aku juga, aku bakal kayang).</p>
+            <p class="highlight">Karena kamu layak mendapatkan kebahagiaan.</p>
+            <p class="funny-text">(Termasuk layak dapet website yang gak seberapa ini 🎉)</p>
+        </div>
+    </div>
+
+    <!-- Final Decision -->
+    <div class="slide">
+        <div class="decision-container">
+            <div class="decision-box">
+                <h2>Mau Ga?</h2>
+                <p>Kasih kita kesempatan lagi buat nulis cerita yang lebih baik?</p>
+                <p class="funny-text" style="margin-bottom: 30px;">
+                    (Warning: Kalo pilih "Tidak", tombolnya bakal ngamuk 😈)
+                </p>
+                
+                <div class="button-container">
+                    <button class="decision-btn yes-btn" onclick="sayYes()">
+                        Iya Dong! ❤️
+                    </button>
+                    <button class="decision-btn no-btn" onclick="sayNo()" id="noBtn">
+                        Tidak
+                        <div class="block-overlay" id="blockOverlay">Bukan Pilihan! 😤</div>
+                    </button>
+                </div>
+
+                <div class="video-container" id="videoContainer" style="display: none;">
+    <p style="margin-bottom: 20px; color: #fff; text-align: center;">
+        <strong>Pesan khusus buat kamu:</strong>
+    </p>
+
+    <div style="border-radius: 15px; overflow: hidden; max-width: 600px; margin: 0 auto; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <video width="100%" controls style="display: block;">
+            <source src="videochelly.mp4" type="video/mp4">
+            Maaf, browser kamu tidak mendukung pemutar video.
+        </video>
+    </div>
+
+    <p class="funny-text" style="margin-top: 20px; text-align: center; color: #ccc;">
+        Makasih udah mau kasih kesempatan lagi 🥺❤️
+    </p>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <button class="nav-btn" onclick="nextSlide()" id="navBtn" title="Next Slide">→</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+let slides = [];
+
+document.addEventListener('DOMContentLoaded', function() {
+    slides = document.querySelectorAll('.slide');
+    console.log('Found slides:', slides.length); // Debug log
+
+    // Pastikan slide pertama aktif
+    if (slides.length > 0) {
+        slides[0].classList.add('active');
+    }
+});
+
+function nextSlide() {
+    if (currentSlide < slides.length - 1) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide++;
+        slides[currentSlide].classList.add('active');
+        updateProgress();
+    } else {
+        console.log('No more slides to show'); // Debug log
+    }
+}
+
+function updateProgress() {
+    const progress = ((currentSlide + 1) / slides.length) * 100;
+    document.getElementById('progressBar').style.width = progress + '%';
+}
+
+
+        function createFloatingHearts() {
+            const heartsContainer = document.getElementById('floatingHearts');
+            
+            setInterval(() => {
+                if (document.getElementById('mainContent').style.display !== 'none') {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = ['❤️', '💕', '💖', '💝', '💗'][Math.floor(Math.random() * 5)];
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                    heart.style.fontSize = (Math.random() * 1 + 1) + 'rem';
+                    heartsContainer.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        if (heart.parentNode) {
+                            heart.parentNode.removeChild(heart);
+                        }
+                    }, 15000);
+                }
+            }, 3000);
+        }
+
+       function login(event) {
+    event.preventDefault();
+    const password = document.getElementById('password').value.trim();
+    const loginBtn = document.querySelector('.login-btn');
+    const loginText = document.getElementById('loginText');
+    
+    console.log('Password entered:', password); // Debug log
+    
+    if (password === 'Ayok kek dulu') {
+        loginBtn.disabled = true;
+        loginText.innerHTML = '<div class="loading"></div>';
+        
+        setTimeout(() => {
+            const loginPage = document.getElementById('loginPage');
+            const mainContent = document.getElementById('mainContent');
+            
+            // Debug log untuk memastikan elemen yang benar
+            console.log('Hiding login page and showing main content');
+            
+            // Hide login page
+            loginPage.style.opacity = '0';
+            loginPage.style.transform = 'scale(0.9)';
+            loginPage.style.transition = 'all 0.5s ease';
+            
+            setTimeout(() => {
+                loginPage.style.display = 'none';
+                mainContent.style.display = 'block';
+                
+                // Reset and show first slide
+                const firstSlide = slides[0];
+                if (firstSlide) {
+                    firstSlide.classList.add('active');
+                }
+                
+                startMusic();
+            }, 500);
+        }, 800);
+        
+    } else {
+        // Error animation
+        const passwordInput = document.getElementById('password');
+        passwordInput.style.borderColor = 'var(--accent)';
+        passwordInput.style.animation = 'rejected 0.5s ease-in-out';
+        
+        setTimeout(() => {
+            passwordInput.style.borderColor = 'rgba(255, 255, 255, 0.12)';
+            passwordInput.style.animation = '';
+        }, 1000);
+        
+        // Funny hint
+        if (password.length > 0) {
+            loginText.textContent = 'Salah dong! 😅';
+            setTimeout(() => {
+                loginText.textContent = 'Masuk';
+            }, 2000);
+        }
+    }
+}
+            
+
+       let musicPlaying = false;
+
+document.addEventListener('click', function autoPlayMusic() {
+    const music = document.getElementById('bgMusic');
+    music.play().then(() => {
+        musicPlaying = true;
+        updateMusicButton();
+        console.log('Music started automatically!');
+    }).catch(e => {
+        console.log('Autoplay blocked:', e);
+    });
+    // Remove this event listener after first click
+    document.removeEventListener('click', autoPlayMusic);
+});
+
+function toggleMusic() {
+    const music = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    
+    if (musicPlaying) {
+        music.pause();
+        musicPlaying = false;
+        musicBtn.classList.remove('playing');
+    } else {
+        music.play().catch(e => console.log('Could not play music'));
+        musicPlaying = true;
+        musicBtn.classList.add('playing');
+    }
+    updateMusicButton();
+}
+
+function updateMusicButton() {
+    const btn = document.getElementById('musicBtn');
+    if (btn) {
+        btn.textContent = musicPlaying ? '⏸️' : '♪';
+        btn.title = musicPlaying ? 'Pause Music' : 'Play Music';
+    }
+}
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide++;
+                slides[currentSlide].classList.add('active');
+                updateProgress();
+                
+                // Add some fun effects
+                if (currentSlide === 2) { // Photo slide
+                    setTimeout(() => {
+                        document.querySelectorAll('.photo-container').forEach((photo, index) => {
+                            setTimeout(() => {
+                                photo.style.animation = 'slideUpFade 0.8s ease forwards';
+                            }, index * 200);
+                        });
+                    }, 500);
+                }
+                
+                if (currentSlide === slides.length - 1) {
+                    document.getElementById('navBtn').style.display = 'none';
+                }
+            }
+        }
+
+        function updateProgress() {
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function sayYes() {
+            const messages = [
+                'Yeayyyy! 🎉',
+                'Makasih udah mau kasih kesempatan lagi ❤️',
+                'Aku janji ga bakal ngecewain lagi!',
+                'Ini ada sesuatu buat kamu...'
+            ];
+            
+            let messageIndex = 0;
+            const showMessage = () => {
+                if (messageIndex < messages.length) {
+                    setTimeout(() => {
+                        // Create a nice alert modal instead of browser alert
+                        showCustomAlert(messages[messageIndex]);
+                        messageIndex++;
+                        showMessage();
+                    }, 1300);
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('videoContainer').style.display = 'block';
+                        // Add confetti effect
+                        createConfetti();
+                    }, 1000);
+                }
+            };
+            showMessage();
+        }
+
+        function sayNo() {
+            const overlay = document.getElementById('blockOverlay');
+            const noBtn = document.getElementById('noBtn');
+            
+            overlay.style.display = 'flex';
+            noBtn.style.animation = 'rejected 0.8s ease-in-out';
+            
+            // Random funny responses
+            const responses = [
+                'Bukan Pilihan! 😤',
+                'Ga Boleh! 🚫',
+                'Coba Lagi! 😏',
+                'Pilih Yang Iya! ❤️',
+                'Jangan Keras Kepala! 🙄'
+            ];
+            
+            overlay.textContent = responses[Math.floor(Math.random() * responses.length)];
+            
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                noBtn.style.animation = '';
+            }, 2000);
+        }
+
+        function showCustomAlert(message) {
+            // Create custom alert
+            const alertDiv = document.createElement('div');
+            alertDiv.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: var(--glass);
+                backdrop-filter: blur(25px);
+                border: 1px solid var(--glass-border);
+                padding: 30px 40px;
+                border-radius: 20px;
+                color: var(--text);
+                font-size: 1.1rem;
+                font-weight: 500;
+                z-index: 2000;
+                animation: slideUpFade 0.6s ease forwards;
+                text-align: center;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            `;
+            alertDiv.textContent = message;
+            document.body.appendChild(alertDiv);
+            
+            setTimeout(() => {
+                alertDiv.style.animation = 'fadeOut 0.4s ease forwards';
+                setTimeout(() => {
+                    document.body.removeChild(alertDiv);
+                }, 400);
+            }, 2000);
+        }
+
+        function createConfetti() {
+            const colors = ['#ff6b8a', '#4facfe', '#667eea', '#f093fb', '#f5576c'];
+            const confettiContainer = document.createElement('div');
+            confettiContainer.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1500;
+            `;
+            document.body.appendChild(confettiContainer);
+            
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.style.cssText = `
+                        position: absolute;
+                        width: 10px;
+                        height: 10px;
+                        background: ${colors[Math.floor(Math.random() * colors.length)]};
+                        top: -10px;
+                        left: ${Math.random() * 100}%;
+                        transform: rotate(${Math.random() * 360}deg);
+                        animation: confettiFall 3s linear forwards;
+                    `;
+                    confettiContainer.appendChild(confetti);
+                }, i * 100);
+            }
+            
+            setTimeout(() => {
+                document.body.removeChild(confettiContainer);
+            }, 4000);
+        }
+
+        // Add confetti animation to CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes confettiFall {
+                to {
+                    transform: translateY(100vh) rotate(720deg);
+                    opacity: 0;
+                }
+            }
+            
+            @keyframes fadeOut {
+                to {
+                    opacity: 0;
+                    transform: translate(-50%, -60%);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (document.getElementById('mainContent').style.display !== 'none') {
+                if (e.code === 'Space' || e.code === 'ArrowRight') {
+                    e.preventDefault();
+                    nextSlide();
+                }
+            }
+        });
+</script>
+</body>
+</html>
+    
